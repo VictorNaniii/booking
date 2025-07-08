@@ -1,4 +1,4 @@
-include .env
+#include .env
 LOCAL_BIN:=$(CURDIR)/bin
 
 install-deps:
@@ -13,12 +13,12 @@ get-deps:
 generate:
 	make generate-boking-api
 
-generate-boking-api:
-	mkdir -p pkg/boking
-	protoc --proto_path=api/boking \
-		--go_out=api/boking --go_opt=paths=source_relative \
-		--go-grpc_out=api/boking --go-grpc_opt=paths=source_relative \
-		api/boking/boking.proto
+generate-booking-api:
+	mkdir -p pkg/booking
+	protoc --proto_path=proto/ \
+		--go_out=api/booking --go_opt=paths=source_relative \
+		--go-grpc_out=api/booking --go-grpc_opt=paths=source_relative \
+		proto/booking.proto
 
 local-migration-status:
 	$(LOCAL_BIN)/goose -dir ${MIGRATION_DIR} postgres ${PG_DSN} status -v

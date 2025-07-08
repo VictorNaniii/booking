@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package booking;
 
-option go_package = "bookingpb";
+option go_package = "github.com/VictorNaniii/booking/pkg/booking;booking";
 
 //// --- AUTHENTICATION & INVITATION SERVICE ---
 
