@@ -14,7 +14,7 @@ generate:
 	make generate-boking-api
 
 generate-booking-api:
-	mkdir -p pkg/booking
+	mkdir -p api/booking
 	protoc --proto_path=proto/ \
 		--go_out=api/booking --go_opt=paths=source_relative \
 		--go-grpc_out=api/booking --go-grpc_opt=paths=source_relative \
